@@ -11,6 +11,11 @@
 
         <div class="card-body">
 
+            <div class="alert alert-warning mt-2">
+                <a>NIS tidak dapat diubah. Jika NIS salah, mohon input data baru</a>
+                <a href="{{ route('sisw.create') }}" class="form-label">di sini</a>
+            </div>
+
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <strong>Pembaruan Data Gagal!</strong>
@@ -29,7 +34,7 @@
                 @csrf
                 @method('PUT')
 
-                    <div class="row mb-3 mt-3">
+                    <div class="row mb-3 mt-4">
                         <div class="col-2 mt-2">
                             <label for="nis" class="col-form-label">
                                     <strong>NIS</strong>
@@ -37,10 +42,10 @@
                         </div>
 
                         <div class="col-10">
-                            <div class="input-group">
+                            <div class="input-group mb-1">
                                 <div class="form-floating">
-                                    <input type="text" name="nis" class="form-control is-invalid" placeholder="Masukkan NIS Siswa" value="{{ $sisw->nis }}" readonly>
-                                    <label for="name">NIS Tidak dapat diubah</label>
+                                    <input type="text" name="nis" class="form-control" placeholder="NIS Siswa" value="{{ $sisw->nis }}" readonly>
+                                    <label for="name">NIS Siswa</label>
                                 </div>
                             </div>
                         </div>
