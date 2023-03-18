@@ -36,7 +36,7 @@ class SiswaController extends Controller
             'nis' => 'required|unique:data_siswa,nis|min:5',
             'nama' => 'required|unique:data_siswa,nama',
             'kelas' => 'required',
-            'no_hp' => 'required|min:9',
+            'no_hp' => 'required|min:10|max:12',
             'keterangan' => 'required'
             
         ],  [
@@ -49,8 +49,9 @@ class SiswaController extends Controller
 
                 'kelas.required' => 'Kelas tidak boleh kosong',
 
-                'no_hp.required' => 'Nomor HP minimal 9 digit',
-                'no_hp.min' => 'Nomor HP minimal 9 digit'
+                'no_hp.required' => 'Nomor HP Harus diisi',
+                'no_hp.min' => 'Nomor HP Minimal 10 digit',
+                'no_hp.max' => 'Nomor HP Maksimal 12 digit',
         ]);
 
         Siswa::create($request->all());
@@ -80,6 +81,13 @@ class SiswaController extends Controller
      */
     public function update(Request $request, Siswa $sisw)
     {
+        $nama = $request->input('nama');
+        $no_hp = $request->input('no_hp');
+
+        if (preg_match('/[0-9]/', $nama)) {
+            return redirect()->back()
+            ->with('error', 'Nama tidak boleh berisi angka');
+        }
     
         $sisw->nama = $request->input('nama');
         $sisw->kelas = $request->input('kelas');
