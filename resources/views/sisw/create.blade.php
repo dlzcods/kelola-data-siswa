@@ -1,8 +1,8 @@
 @extends('template')
 
 @section('content')
-<div class="container d-flex justify-content-center">
 
+<div class="container d-flex justify-content-center">
 
     <div class="card mt-5 w-50 px-3">
         <div class="card-header">
