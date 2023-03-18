@@ -46,7 +46,7 @@
                     </div>
                     
 
-                    <div class="row mb-3">
+                    <div class="row mb-3 mt-4">
                         <div class="col-2 mt-2">
                             <label for="nama" class="col-form-label">
                                 <strong>Nama</strong>
@@ -63,27 +63,30 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
-                        <div class="col-2">
+                    <div class="row mb-3 mt-4">
+                        <div class="col-2 mt-2">
                             <label for="kelas" class="col-form-label"> 
                                 <strong>Kelas</strong>
                             </label>
                         </div> 
 
                         <div class="col-10">
-                            <select class ="form-select" id="kelas" name="kelas" required>
-                                <option>XII RPL 1</option>
-                                <option>XII RPL 2</option>
-                                <option>XII MM 1</option>
-                                <option>XII MM 2</option>
-                                <option>XII FKK 1</option>
-                                <option>XII FKK 2</option>
-                            </select>
+                            <div class="form-floating">
+                                <select class ="form-select" id="kelas" name="kelas" aria-label="Pilih Kelas" required>
+                                    <option>XII RPL 1</option>
+                                    <option>XII RPL 2</option>
+                                    <option>XII MM 1</option>
+                                    <option>XII MM 2</option>
+                                    <option>XII FKK 1</option>
+                                    <option>XII FKK 2</option>
+                                </select>
+                                <label for="kelas">Pilih Kelas</label>
+                            </div>
                         </div>   
                     </div>
                     
-                    <div class="row mb-3">
-                        <div class="col-2">
+                    <div class="row mb-3 mt-4">
+                        <div class="col-2 mt-2">
                             <label for="no_hp" class="col-form-label">
                                 <Strong>No HP</Strong> 
                             </label>
@@ -99,23 +102,26 @@
                         </div>
                     </div>
                     
-                    <div class="row mb-3">
-                        <div class="col-2">
+                    <div class="row mb-3 mt-4">
+                        <div class="col-2 mt-2 ">
                             <label for="keterangan" class="col-form-label">
                                 <strong>Keterangan</strong>
                             </label>
                         </div>
 
                         <div class="col-10">
-                            <select class ="form-select" id="keterangan" name="keterangan" required>
-                                <option>Melanjutkan Kuliah</option>
-                                <option>Bekerja</option>
-                                <option>Wirausaha</option>
-                            </select>
+                            <div class="form-floating">
+                                <select class ="form-select" id="keterangan" name="keterangan" aria-label="Pilih Keterangan" required>
+                                    <option>Melanjutkan Kuliah</option>
+                                    <option>Bekerja</option>
+                                    <option>Wirausaha</option>
+                                </select>
+                                <label for="keterangan">Pilih Keterangan</label>
+                            </div>
                         </div>
                     </div>   
 
-                    <div class="mt-4 mb-2 text-center">
+                    <div class="mt-4 mb-3 text-center">
                         <a href="{{ route('sisw.index') }}" class="btn btn-danger me-3">Lihat Tabel</a>
                         <button type="submit" class="btn btn-primary ms-3">Tambah Data</button>
                     </div>
