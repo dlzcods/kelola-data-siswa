@@ -29,28 +29,25 @@
                 @csrf
                 @method('PUT')
 
-                <div class="row d-flex justify-content-center">
-
                     <div class="row mb-3 mt-3">
-                        <div class="col-2">
+                        <div class="col-2 mt-2">
                             <label for="nis" class="col-form-label">
-                                <h3>
                                     <strong>NIS</strong>
-                                </h3>
                             </label>
                         </div>
 
                         <div class="col-10">
-                            <label for="nis" class="col-form-label">
-                                <h3>
-                                    <strong>: {{ $sisw->nis }} </strong>
-                                </h3>
-                            </label>
+                            <div class="input-group">
+                                <div class="form-floating">
+                                    <input type="text" name="nis" class="form-control is-invalid" placeholder="Masukkan NIS Siswa" value="{{ $sisw->nis }}" readonly>
+                                    <label for="name">NIS Tidak dapat diubah</label>
+                                </div>
+                            </div>
                         </div>
                     </div> 
 
-                    <div class="row mb-3">
-                        <div class="col-2">
+                    <div class="row mb-3 mt-4">
+                        <div class="col-2 mt-2">
                             <label for="name" class="col-form-label">
                                 <strong>Nama</strong>
                             </label>
@@ -66,29 +63,32 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
-                        <div class="col-2">
+                    <div class="row mb-3 mt-4">
+                        <div class="col-2 mt-2">
                             <label for="kelas" class="col-form-label">
                                 <strong>Kelas</strong>
                             </label> 
                         </div>
 
                         <div class="col-10">
-                            <select class ="form-select" id="kelas" name="kelas" required>
-                                <option value="XII RPL 1" {{ old('kelas', $sisw->kelas) == 'XII RPL 1' ? 'selected' : '' }}>XII RPL 1</option>
-                                <option value="XII RPL 2" {{ old('kelas', $sisw->kelas) == 'XII RPL 2' ? 'selected' : '' }}>XII RPL 2</option>
-                                <option value="XII MM 1" {{ old('kelas', $sisw->kelas) == 'XII MM 1' ? 'selected' : '' }}>XII MM 1</option>
-                                <option value="XII MM 2" {{ old('kelas', $sisw->kelas) == 'XII MM 2' ? 'selected' : '' }}>XII MM 2</option>
-                                <option value="XII FKK 1" {{ old('kelas', $sisw->kelas) == 'XII FKK 1' ? 'selected' : '' }}>XII FKK 1</option>
-                                <option value="XII FKK 2" {{ old('kelas', $sisw->kelas) == 'XII FKK 2' ? 'selected' : '' }}>XII FKK 2</option>
-                            </select>
+                            <div class="form-floating">
+                                <select class ="form-select" id="kelas" name="kelas" aria-label="Pilih Kelas" required>
+                                    <option value="XII RPL 1" {{ old('kelas', $sisw->kelas) == 'XII RPL 1' ? 'selected' : '' }}>XII RPL 1</option>
+                                    <option value="XII RPL 2" {{ old('kelas', $sisw->kelas) == 'XII RPL 2' ? 'selected' : '' }}>XII RPL 2</option>
+                                    <option value="XII MM 1" {{ old('kelas', $sisw->kelas) == 'XII MM 1' ? 'selected' : '' }}>XII MM 1</option>
+                                    <option value="XII MM 2" {{ old('kelas', $sisw->kelas) == 'XII MM 2' ? 'selected' : '' }}>XII MM 2</option>
+                                    <option value="XII FKK 1" {{ old('kelas', $sisw->kelas) == 'XII FKK 1' ? 'selected' : '' }}>XII FKK 1</option>
+                                    <option value="XII FKK 2" {{ old('kelas', $sisw->kelas) == 'XII FKK 2' ? 'selected' : '' }}>XII FKK 2</option>
+                                </select>
+                                <label for="kelas">Pilih Kelas</label>
+                         </div>
                         </div>  
                     </div>
 
-                    <div class="row mb-3">
-                        <div class="col-2">
+                    <div class="row mb-3 mt-4">
+                        <div class="col-2 mt-2">
                             <label for="no_hp" class="col-form-label">
-                                <strong>No HP:</strong>
+                                <strong>No HP</strong>
                             </label>
                         </div>
 
@@ -102,28 +102,30 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
-                        <div class="col-2">
+                    <div class="row mb-3 mt-4">
+                        <div class="col-2 mt-2">
                             <label for="keterangan" class="col-form-label">
                                 <strong>Keterangan</strong> 
                             </label>
                         </div>
 
                         <div class="col-10">
-                            <select class ="form-select" id="keterangan" name="keterangan" required>
-                                <option value="Melanjutkan Kuliah" {{ old('keterangan', $sisw->keterangan) == 'Melanjutkan Kuliah' ? 'selected' : '' }}>Melanjutkan Kuliah</option>
-                                <option value="Bekerja" {{ old('keterangan', $sisw->keterangan) == 'Bekerja' ? 'selected' : '' }}>Bekerja</option>
-                                <option value="Wirausaha" {{ old('keterangan', $sisw->keterangan) == 'Wirausaha' ? 'selected' : '' }}>Wirausaha</option>
-                            </select>
+                            <div class="form-floating">
+                                <select class ="form-select" id="keterangan" name="keterangan" aria-label="Pilih Keterangan" required>
+                                    <option value="Melanjutkan Kuliah" {{ old('keterangan', $sisw->keterangan) == 'Melanjutkan Kuliah' ? 'selected' : '' }}>Melanjutkan Kuliah</option>
+                                    <option value="Bekerja" {{ old('keterangan', $sisw->keterangan) == 'Bekerja' ? 'selected' : '' }}>Bekerja</option>
+                                    <option value="Wirausaha" {{ old('keterangan', $sisw->keterangan) == 'Wirausaha' ? 'selected' : '' }}>Wirausaha</option>
+                                </select>
+                                <label for="keterangan">Pilih Keterangan</label>
+                            </div>
                         </div>       
                     </div>
 
-                    <div class="mt-3 mb-3 text-center">
+                    <div class="mt-4 mb-3 text-center">
                         <a href="{{ route('sisw.index') }}" class="btn btn-danger me-3">Lihat Tabel</a>
                         <button type="submit" class="btn btn-primary ms-3">Edit Data</button>
                     </div>
 
-                </div>
             </form>
         </div>
     </div>
