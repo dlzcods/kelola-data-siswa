@@ -81,13 +81,15 @@ class SiswaController extends Controller
      */
     public function update(Request $request, Siswa $sisw)
     {
-        $nama = $request->input('nama');
-        $no_hp = $request->input('no_hp');
-
-        if (preg_match('/[0-9]/', $nama)) {
-            return redirect()->back()
-            ->with('error', 'Nama tidak boleh berisi angka');
-        }
+        $request->validate([
+            'nama' => 'required|regex:/^[a-zA-Z\s]*$/',
+            'no_hp' => 'required|numeric|digits_between:10,12',
+        ], 
+        
+        [
+            'nama.regex' => 'Nama Tidak hanya boleh berisi huruf',
+            'no_hp.digits_between' => 'Nomor HP minimal 10 digit serta maksimal 12 digit',
+        ]);
     
         $sisw->nama = $request->input('nama');
         $sisw->kelas = $request->input('kelas');

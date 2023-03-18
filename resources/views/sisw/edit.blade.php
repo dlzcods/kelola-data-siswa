@@ -13,7 +13,7 @@
 
             @if ($errors->any())
                 <div class="alert alert-danger">
-                    <strong>Waduh Edit Gagal!!</strong>
+                    <strong>Pembaruan Data Gagal!</strong>
                     <br>
                     <br>
 
