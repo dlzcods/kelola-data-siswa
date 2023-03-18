@@ -1,8 +1,10 @@
 @extends('template')
 
 @section('content')
+<div class="container d-flex justify-content-center">
 
-    <div class="card mt-5 justify-content-center">
+
+    <div class="card mt-5 w-50 px-3">
         <div class="card-header">
             <h2 class="text-center"><strong>INPUT DATA SISWA</strong></h2>
         </div>
@@ -26,33 +28,42 @@
             <form action="{{ route('sisw.store') }}" method="POST">
                 @csrf
 
-                <div class="row d-flex justify-content-center">
-
-                    <div class="row col-md-8 mb-3 mt-3">
-                        <div class="col-2">
+                    <div class="row mb-3 mt-3">
+                        <div class="col-2 mt-2">
                             <label for="nis" class="col-form-label">
                                 <strong>NIS</strong>
                             </label>
                         </div>
-
+                        
                         <div class="col-10">
-                            <input type="number" name="nis" class="form-control" placeholder="Masukkan NIS Siswa" required>
-                        </div>   
+                            <div class="input-group">
+                                <div class="form-floating"> 
+                                    <input type="number" name="nis" class="form-control" placeholder="Masukkan NIS" required>
+                                    <label>Masukkan NIS Siswa</label>
+                                </div>    
+                            </div>
+                        </div>
                     </div>
+                    
 
-                    <div class="row col-md-8 mb-3">
-                        <div class="col-2">
+                    <div class="row mb-3">
+                        <div class="col-2 mt-2">
                             <label for="nama" class="col-form-label">
                                 <strong>Nama</strong>
                             </label>
                         </div>
 
                         <div class="col-10">
-                            <input type="text" name="nama" class="form-control" placeholder="Masukkan Nama Siswa" required>
+                            <div class="input-group">
+                                <div class="form-floating">
+                                    <input type="text" name="nama" class="form-control" placeholder="Masukkan Nama Siswa" required>
+                                    <label for="">Masukkan Nama Siswa</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="row col-md-8 mb-3">
+                    <div class="row mb-3">
                         <div class="col-2">
                             <label for="kelas" class="col-form-label"> 
                                 <strong>Kelas</strong>
@@ -71,7 +82,7 @@
                         </div>   
                     </div>
                     
-                    <div class="row col-md-8 mb-3">
+                    <div class="row mb-3">
                         <div class="col-2">
                         <label for="no_hp" class="col-form-label">
                             <Strong>No HP</Strong> 
@@ -83,7 +94,7 @@
                         </div>
                     </div>
                     
-                    <div class="row col-md-8 mb-3">
+                    <div class="row mb-3">
                         <div class="col-2">
                             <label for="keterangan" class="col-form-label">
                                 <strong>Keterangan</strong>
@@ -99,14 +110,14 @@
                         </div>
                     </div>   
 
-                    <div class="col-md-8 mt-3 mb-3 text-center">
-                        <a href="{{ route('sisw.index') }}" class="btn btn-danger me-4">Melihat Tabel</a>
-                        <button type="submit" class="btn btn-primary ms-4">Tambah Data</button>
+                    <div class="mt-4 mb-2 text-center">
+                        <a href="{{ route('sisw.index') }}" class="btn btn-danger me-3">Lihat Tabel</a>
+                        <button type="submit" class="btn btn-primary ms-3">Tambah Data</button>
                     </div>
 
-                </div> 
+                {{-- </div> --}}
             </form>
         </div>
     </div>
-    
+</div>
 @endsection
