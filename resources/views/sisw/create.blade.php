@@ -84,13 +84,18 @@
                     
                     <div class="row mb-3">
                         <div class="col-2">
-                        <label for="no_hp" class="col-form-label">
-                            <Strong>No HP</Strong> 
-                        </label>
+                            <label for="no_hp" class="col-form-label">
+                                <Strong>No HP</Strong> 
+                            </label>
                         </div>
 
                         <div class="col-10">
-                        <input type="number" name="no_hp" id="no_hp" class="form-control" placeholder="Masukkan Nomor HP Siswa" required>
+                            <div class="input-group">
+                                <div class="form-floating">
+                                    <input type="number" name="no_hp" id="no_hp" class="form-control" placeholder="Masukkan Nomor HP Siswa" required>
+                                    <label for="">Masukkan Nomor HP Siswa</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
