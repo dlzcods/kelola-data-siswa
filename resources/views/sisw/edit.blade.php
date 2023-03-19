@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container d-flex justify-content-center">
+<div class="container d-flex justify-content-center mt-5">
 
     <div class="card mt-5 w-50 px-3">
         <div class="card-header">
@@ -12,8 +12,8 @@
         <div class="card-body">
 
             <div class="alert alert-warning mt-2">
-                <a>NIS tidak dapat diubah. Jika NIS salah, mohon input data baru</a>
-                <a href="{{ route('sisw.create') }}" class="form-label">di sini</a>
+                <a>NIS tidak dapat diubah. Jika NIS salah, mohon input data baru di </a>
+                <a href="{{ route('sisw.create') }}" class="form-label">sini</a>
             </div>
 
             @if ($errors->any())
@@ -127,8 +127,8 @@
                     </div>
 
                     <div class="mt-4 mb-3 text-center">
-                        <a href="{{ route('sisw.index') }}" class="btn btn-danger me-3">Lihat Tabel</a>
-                        <button type="submit" class="btn btn-primary ms-3">Edit Data</button>
+                        <a href="{{ route('sisw.index') }}" class="btn btn-danger me-2">Lihat Tabel</a>
+                        <button type="submit" class="btn btn-primary ms-2">Ubah Data</button>
                     </div>
 
             </form>
