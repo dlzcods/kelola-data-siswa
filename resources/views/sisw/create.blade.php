@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container d-flex justify-content-center">
+<div class="container d-flex justify-content-center mt-5">
 
     <div class="card mt-5 w-50 px-3">
         <div class="card-header">
@@ -120,15 +120,43 @@
                             </div>
                         </div>
                     </div>   
-
+                    
+                    <!-- Button trigger modal (Simpan Data) -->
                     <div class="mt-4 mb-3 text-center">
-                        <a href="{{ route('sisw.index') }}" class="btn btn-danger me-3">Lihat Tabel</a>
-                        <button type="submit" class="btn btn-primary ms-3">Tambah Data</button>
+                        <a href="{{ route('sisw.index') }}" class="btn btn-danger me-2">Lihat Tabel</a>
+                        <button type="button" class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Konfirmasi</button>
                     </div>
 
-                {{-- </div> --}}
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Konfirmasi Simpan Data</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <p> 
+                                       <strong>Cek NIS terlebih dahulu, karena NIS tidak dapat diubah.</strong>
+                                       <br> 
+                                       Jika semua data sudah benar, klik Simpan Data.
+                                    </p>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cek Lagi</button>
+                                    <button type="submit" class="btn btn-primary">Simpan Data</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
             </form>
         </div>
     </div>
 </div>
+
 @endsection
