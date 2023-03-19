@@ -33,25 +33,28 @@ class SiswaController extends Controller
     {
         $request->validate([
 
-            'nis' => 'required|unique:data_siswa,nis|min:5',
-            'nama' => 'required|unique:data_siswa,nama',
+            'nis' => 'required|unique:data_siswa,nis|numeric|digits_between:5,5',
+            'nama' => 'required|unique:data_siswa,nama|regex:/^[a-zA-Z\s]*$/',
             'kelas' => 'required',
-            'no_hp' => 'required|min:10|max:12',
-            'keterangan' => 'required'
+            'no_hp' => 'required|unique:data_siswa,no_hp|numeric|digits_between:10,12',
+            'keterangan' => 'required',
             
-        ],  [
-                'nis.unique' => 'NIS Sudah terdaftar',
-                'nis.required' => 'NIS Harus diisi',
-                'nis.min' => 'NIS Minimal 5 digit',
+        ],  
+        
+        [
+                'nis.unique' => 'NIS sudah terdaftar',
+                'nis.required' => 'NIS harus diisi',
+                'nis.digits_between' => 'NIS harus 5 digit',
 
-                'nama.unique' => 'Nama Sudah terdaftar',
-                'nama.required' => 'Nama tidak boleh kosong',
+                'nama.required' => 'Nama harus diisi',
+                'nama.unique' => 'Nama sudah terdaftar',
+                'nama.regex' => 'Nama hanya boleh berisi huruf',
 
-                'kelas.required' => 'Kelas tidak boleh kosong',
+                'kelas.required' => 'Kelas harus diisi',
 
-                'no_hp.required' => 'Nomor HP Harus diisi',
-                'no_hp.min' => 'Nomor HP Minimal 10 digit',
-                'no_hp.max' => 'Nomor HP Maksimal 12 digit',
+                'no_hp.required' => 'Nomor HP harus diisi',
+                'no_hp.unique' => 'Nomor HP sudah terdaftar',
+                'no_hp.digits_between' => 'Nomor HP minimal 10 digit serta maksimal 12 digit',
         ]);
 
         Siswa::create($request->all());
@@ -82,12 +85,24 @@ class SiswaController extends Controller
     public function update(Request $request, Siswa $sisw)
     {
         $request->validate([
-            'nama' => 'required|regex:/^[a-zA-Z\s]*$/',
-            'no_hp' => 'required|numeric|digits_between:10,12',
+
+            /* 
+            * kode '.$sisw->id.' digunakan sebagai parameter 'ignore' supaya mengabaikan validasi unique 
+            * jika data sudah sesuai dengan yang ada di database berdasarkan primary key 
+            */
+
+            'nama' => 'required|unique:data_siswa,nama,'.$sisw->id.'|regex:/^[a-zA-Z\s]*$/',
+            'no_hp' => 'required|unique:data_siswa,no_hp,'.$sisw->id.'|numeric|digits_between:10,12',
+
         ], 
         
         [
-            'nama.regex' => 'Nama Tidak hanya boleh berisi huruf',
+            'nama.required' => 'Nama harus diisi',
+            'nama.unique' => 'Nama sudah terdaftar',
+            'nama.regex' => 'Nama hanya boleh berisi huruf',
+
+            'no_hp.required' => 'No HP harus diisi',
+            'no_hp.unique' => 'No HP sudah terdaftar',
             'no_hp.digits_between' => 'Nomor HP minimal 10 digit serta maksimal 12 digit',
         ]);
     
