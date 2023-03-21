@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="card mt-5 mb-4 justify-content-center">
+
     <div class="card-header">
         <h2 class="text-center"><strong>Data Penelusuran Tamatan SMKN 1 Purwokerto</strong></h2>
     </div>
@@ -36,40 +37,42 @@
 
                 <tbody class="table-group-divider">
 
-                    @foreach ($sisw as $siswa)
+                    @foreach ($siswa as $student)
                     
                     <tr>
                         <td scope="row" class="text-center">{{ $number + $loop->index }}</td>
-                        <td>{{ $siswa->nis }}</td>
-                        <td>{{ $siswa->nama }}</td>
-                        <td>{{ $siswa->kelas }}</td>
-                        <td>{{ $siswa->no_hp }}</td>
-                        <td>{{ $siswa->keterangan }}</td>
+                        <td>{{ $student->nis }}</td>
+                        <td>{{ $student->nama }}</td>
+                        <td>{{ $student->kelas }}</td>
+                        <td>{{ $student->no_hp }}</td>
+                        <td>{{ $student->keterangan }}</td>
                         <td class="text-center" height = "70px">
 
-                            <form action="{{ route('sisw.destroy', $siswa->id) }}" method="POST">
-                                <a href="{{ route('sisw.edit', $siswa->id) }}" class="btn btn-primary btn-sm me-2">Update</a>
+                            <form action="{{ route('siswa.destroy', $student->id) }}" method="POST">
+                                <a href="{{ route('siswa.edit', $student->id) }}" class="btn btn-primary btn-sm me-2">Update</a>
 
                                 @csrf
                                 @method('DELETE')
 
-                                <button type="submit" class="btn btn-danger btn-sm ms-2" onclick="return confirm('Apakah yakin akan menghapus data?')">Hapus</button>
-                            </form>       
+                                <button type="submit" class="btn btn-danger btn-sm ms-2" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')">Hapus</button>
+                            </form>
+
                         </td>
                     </tr>
-                    @endforeach   
+
+                    @endforeach  
+
                 </tbody>
             </table>
-
         </div>
     </div>
 </div>
 
-{!! $sisw->links() !!}
+{!! $siswa->links() !!}
 
 <div class="row mt-3 mb-5">
     <div class="col-md mb-5 mt-2">
-        <a href="{{ route('sisw.create') }}" class="btn btn-success">Tambah Data</a>
+        <a href="{{ route('siswa.create') }}" class="btn btn-success">Tambah Data</a>
     </div>
 </div>
 

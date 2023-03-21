@@ -12,9 +12,9 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        $sisw = Siswa::latest()->paginate(5);
+        $siswa = Siswa::latest()->paginate(5);
 
-        return view('sisw.index', compact('sisw'))
+        return view('sisw.index', compact('siswa'))
         ->with('number',  (request('page', 1) -1) * 5 + 1);
     }
 
@@ -59,7 +59,7 @@ class SiswaController extends Controller
 
         Siswa::create($request->all());
 
-        return redirect()->route('sisw.index')
+        return redirect()->route('siswa.index')
         ->with('success', 'Data Berhasil ditambahkan');
     }
 
@@ -74,15 +74,15 @@ class SiswaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Siswa $sisw)
+    public function edit(Siswa $siswa)
     {
-        return view('sisw.edit', compact('sisw'));
+        return view('sisw.edit', compact('siswa'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Siswa $sisw)
+    public function update(Request $request, Siswa $siswa)
     {
         $request->validate([
 
@@ -91,8 +91,8 @@ class SiswaController extends Controller
             * jika data sudah sesuai dengan yang ada di database berdasarkan primary key 
             */
 
-            'nama' => 'required|unique:data_siswa,nama,'.$sisw->id.'|regex:/^[a-zA-Z\s]*$/',
-            'no_hp' => 'required|unique:data_siswa,no_hp,'.$sisw->id.'|numeric|digits_between:10,12',
+            'nama' => 'required|unique:data_siswa,nama,'.$siswa->id.'|regex:/^[a-zA-Z\s]*$/',
+            'no_hp' => 'required|unique:data_siswa,no_hp,'.$siswa->id.'|numeric|digits_between:10,12',
 
         ], 
         
@@ -106,24 +106,24 @@ class SiswaController extends Controller
             'no_hp.digits_between' => 'Nomor HP minimal 10 digit serta maksimal 12 digit',
         ]);
     
-        $sisw->nama = $request->input('nama');
-        $sisw->kelas = $request->input('kelas');
-        $sisw->no_hp = $request->input('no_hp');
-        $sisw->keterangan = $request->input('keterangan');
-        $sisw->save();
+        $siswa->nama = $request->input('nama');
+        $siswa->kelas = $request->input('kelas');
+        $siswa->no_hp = $request->input('no_hp');
+        $siswa->keterangan = $request->input('keterangan');
+        $siswa->save();
 
-        return redirect()->route('sisw.index')
+        return redirect()->route('siswa.index')
         ->with('success', 'Data Berhasil diperbarui');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Siswa $sisw)
+    public function destroy(Siswa $siswa)
     {
-        $sisw->delete();
+        $siswa->delete();
 
-        return redirect()->route('sisw.index')
+        return redirect()->route('siswa.index')
         ->with('success', 'Data Berhasil dihapus');
     }
 }

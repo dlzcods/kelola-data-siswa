@@ -5,6 +5,7 @@
 <div class="container d-flex justify-content-center mt-5">
 
     <div class="card mt-5 w-50 px-3">
+
         <div class="card-header">
             <h2 class="text-center"><strong>INPUT DATA SISWA</strong></h2>
         </div>
@@ -25,7 +26,7 @@
                 </div>
             @endif
 
-            <form action="{{ route('sisw.store') }}" method="POST">
+            <form action="{{ route('siswa.store') }}" method="POST">
                 @csrf
 
                     <div class="row mb-3 mt-3">
@@ -123,7 +124,7 @@
                     
                     <!-- Button trigger modal (Simpan Data) -->
                     <div class="mt-4 mb-3 text-center">
-                        <a href="{{ route('sisw.index') }}" class="btn btn-danger me-2">Lihat Tabel</a>
+                        <a href="{{ route('siswa.index') }}" class="btn btn-danger me-2">Lihat Tabel</a>
                         <button type="button" class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Konfirmasi</button>
                     </div>
 
