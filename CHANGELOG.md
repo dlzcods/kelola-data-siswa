@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v.1.0.5 (2023-03-24)
+### Changed:
+- Improve notification(Create, Update, Delete) with SweetAlert2 [#11](https://github.com/dlzcods/kelola-data-siswa/commit/e547d76393c91b45c94119b1f912241939aaf0ff)
+
 ## v1.0.4 (2023-03-19)
 ### Added:
 - Add confirmation before saving data on input form [#10](https://github.com/dlzcods/kelola-data-siswa/commit/06e0fc9adc7cbd7ac2ef5122a95dd02098abf5b1)
