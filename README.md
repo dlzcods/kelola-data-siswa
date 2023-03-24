@@ -15,6 +15,7 @@ The application is built with the following technologies:
 
 - Laravel framework
 - MySQL database
+- SweetAlert2
 - Bootstrap 5
 
 ## Changelog
