@@ -19,7 +19,13 @@ The application is built with the following technologies:
 - Bootstrap 5
 
 ## Changelog
-Read about the [changelog](https://github.com/dlzcods/kelola-data-siswa/blob/main/CHANGELOG.md)
+Read the [changelog](https://github.com/dlzcods/kelola-data-siswa/blob/main/CHANGELOG.md)
+
+## Demo Video
+Here is a little demo
+<br>
+
+https://user-images.githubusercontent.com/73648392/227567048-5d65073b-11ba-4ffd-8828-7aafcc2dbc02.mp4
 
 ## Contact
 If you have any questions or suggestions about the project, please contact me at [hafd324@gmail.com](mailto:hafd324d@gmail.com) or [@diel_z](https://www.instagram.com/diel_z/?hl=id)
