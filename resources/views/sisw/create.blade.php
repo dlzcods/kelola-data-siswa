@@ -12,13 +12,13 @@
 
     <body>
         <div class="container d-flex justify-content-center mt-5">
-            <div class="card mt-5 w-50 px-3">
+            <div class="card mt-5 w-50">
 
                 <div class="card-header">
                     <h2 class="text-center"><strong>INPUT DATA SISWA</strong></h2>
                 </div>
 
-                <div class="card-body">
+                <div class="card-body px-5">
                 
                     @if ($errors->any())
                         <div class="alert alert-danger">

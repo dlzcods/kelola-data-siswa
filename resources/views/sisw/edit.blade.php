@@ -4,13 +4,13 @@
 
 <div class="container d-flex justify-content-center mt-5">
 
-    <div class="card mt-5 w-50 px-3">
+    <div class="card mt-5 w-50">
 
         <div class="card-header">
             <h2 class="text-center"><strong>EDIT DATA SISWA</strong></h2>
         </div>
 
-        <div class="card-body">
+        <div class="card-body px-5">
 
             <div class="alert alert-warning mt-2">
                 <a>NIS tidak dapat diubah. Jika NIS salah, mohon input data baru di </a>
