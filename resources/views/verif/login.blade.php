@@ -9,14 +9,14 @@
         <link rel="stylesheet" href="{{ asset('dist/sweetalert2.all.js') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <script src="{{ asset('dist/sweetalert2.all.js') }}"></script>
-        <title>Login-Kella Data Siswa</title>
+        <title>Login Kelola Data Siswa</title>
     </head>
     <body>
         <div class="container d-flex">
             <div class="card w-50">
 
                 <div class="card-header">
-                    <h3 class="text-center"><strong>Welcome</strong></h3>
+                    <h3 class="text-center"><strong>Welcome!</strong></h3>
                 </div>
 
                 <div class="card-body">
@@ -56,6 +56,10 @@
                                         <label for="password">Password</label>
                                     </div>
                                 </div>
+
+                                <div class="sign-up-text">
+                                    <a href="">Sign Up</a>
+                                </div>
                             </div>
                         </div>
 
@@ -68,3 +72,5 @@
         </div>
     </body>
 </html>
+
+@endsection

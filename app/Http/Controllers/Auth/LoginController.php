@@ -26,6 +26,8 @@ class LoginController extends Controller
             'password' => ['required']
         ]);
 
+        // dd($credentials);
+
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('/siswa');
@@ -36,8 +38,17 @@ class LoginController extends Controller
             ]);
         }
     }
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
+
+    public function logout(Request $request) {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login');
     }
+
+    // public function __construct()
+    // {
+    //     $this->middleware('guest')->except('logout');
+    // }
 }

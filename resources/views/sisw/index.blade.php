@@ -141,11 +141,16 @@
 
         {!! $siswa->links() !!}
 
-        <div class="row mt-3 mb-5">
-            <div class="col-md mb-5 mt-2">
-                <a href="{{ route('siswa.create') }}" class="btn btn-success">Tambah Data</a>
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+
+            <div class="row mt-3 mb-5">
+                <div class="col-md mb-5 mt-2">
+                    <a href="{{ route('siswa.create') }}" class="btn btn-success">Tambah Data</a>
+                    <button type="submit" class="btn btn-danger">Logout</button>
+                </div>
             </div>
-        </div>
+        </form> 
 
     </div>
     
