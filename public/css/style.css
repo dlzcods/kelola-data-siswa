@@ -1,0 +1,19 @@
+.container {
+    justify-content: center;
+    margin: 0;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+.card {
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+#btn-login {
+    width: 270px;
+}
+  
+  
