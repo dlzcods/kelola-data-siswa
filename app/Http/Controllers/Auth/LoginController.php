@@ -16,9 +16,12 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view('verif.login');
+        return view('auth.login');
     }
 
+    /**
+     * authenticate the user account
+     */
     public function authentication(Request $request)
     {
         $credentials = $request->validate([
@@ -26,25 +29,26 @@ class LoginController extends Controller
             'password' => ['required']
         ]);
 
-        // dd($credentials);
-
-        if(Auth::attempt($credentials)) {
+        if(Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('/siswa');
         } else {
             return redirect()->back()->withErrors([
                 'email'=>'Invalid email or password',
-                'password'=>'Invalid email or password'
+                'password'=>'Invalid email or password',
             ]);
         }
     }
 
+    /**
+     * for logout obviously
+     */
     public function logout(Request $request) {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('login');
+        return redirect()->route('login.show');
     }
 
     // public function __construct()

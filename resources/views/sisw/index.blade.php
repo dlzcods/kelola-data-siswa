@@ -37,7 +37,6 @@
     @endif
 
     <div class="container d-flex mt-5">
-
         <div class="card mt-5 mb-4">
 
             <div class="card-header">
@@ -45,7 +44,6 @@
             </div>
 
             <div class="card-body">
-
                 <div class="table-responsive mt-3">  
                     <table class="table table-striped-columns
                         table-hover	
@@ -65,9 +63,7 @@
                         </thead>
 
                         <tbody class="table-group-divider">
-
-                            @foreach ($siswa as $siswa_row)
-                                    
+                            @foreach ($siswa as $siswa_row)        
                             <tr>
                                 <td scope="row" class="text-center">{{ $number + $loop->index }}</td>
                                 <td>{{ $siswa_row->nis }}</td>
@@ -86,11 +82,9 @@
                                     </form>
                                 </td>
                             </tr>
-
                             @endforeach  
        
                             <script>
-
                                 // Adding listener for button hapus
                                 const hapusButtons = document.querySelectorAll('.hapus-siswa-btn');
                                 hapusButtons.forEach(function(hapusButton){
@@ -128,7 +122,6 @@
                                         });        
                                     });
                                 });
-
                             </script>   
                         </tbody>
                     </table> 
@@ -152,10 +145,7 @@
             </div>
         </form> 
 
-    </div>
-    
+    </div>  
     </body>
-
 </html>
-
 @endsection
