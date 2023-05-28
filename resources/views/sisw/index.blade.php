@@ -7,6 +7,7 @@
     <head>
         <link rel="stylesheet" href="{{ asset('dist/sweetalert2.css') }}">
         <link rel="stylesheet" href="{{ asset('dist/sweetalert2.all.js') }}">
+        <link rel="stylesheet" href="{{ asset('css/index.css') }}">
         <script src="{{ asset('dist/sweetalert2.all.js') }}"></script>
     </head>
 
@@ -36,8 +37,21 @@
         </script>
     @endif
 
-    <div class="container d-flex mt-5">
-        <div class="card mt-5 mb-4">
+    <div class="container mt-5">
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+
+            <div class="row mt-3 mb-2">
+                <div class="col-md mb-2 mt-2">
+                    <button type="submit" class="btn btn-danger logout-btn">Logout</button>
+                    <a href="{{ route('siswa.create') }}" class="btn btn-success input-btn">Tambah Data</a>
+                </div>
+            </div>
+        </form> 
+    </div> 
+
+    <div class="container d-flex">
+        <div class="card mt-3 mb-4">
 
             <div class="card-header">
                 <h2 class="text-center"><strong>Data Penelusuran Tamatan SMKN 1 Purwokerto</strong></h2>
@@ -131,21 +145,9 @@
     </div>
 
     <div class="container">
-
         {!! $siswa->links() !!}
+    </div>
 
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-
-            <div class="row mt-3 mb-5">
-                <div class="col-md mb-5 mt-2">
-                    <a href="{{ route('siswa.create') }}" class="btn btn-success">Tambah Data</a>
-                    <button type="submit" class="btn btn-danger">Logout</button>
-                </div>
-            </div>
-        </form> 
-
-    </div>  
     </body>
 </html>
 @endsection
