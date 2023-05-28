@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added:
 - Authentication process
     - Login [#27](https://github.com/dlzcods/kelola-data-siswa/commit/df71d1c851effb7b8a013b2dfce53ad6ebc3e904), [#28](https://github.com/dlzcods/kelola-data-siswa/commit/45aa44356ea2edae557d74b96953be6701a401b4)
+    - Logout [#28](https://github.com/dlzcods/kelola-data-siswa/commit/45aa44356ea2edae557d74b96953be6701a401b4)
     - Register [#29](https://github.com/dlzcods/kelola-data-siswa/commit/ca13811f4dab6d105b293a779ee0d7b96e1c57fa) 
 ### Changed:
 - Button position on index [#30](https://github.com/dlzcods/kelola-data-siswa/commit/54e2593a36049d757266a719fa99aff1c2d6febc)
